@@ -1,4 +1,4 @@
-package br.pratiqs.todolist;
+package br.pratiqs;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

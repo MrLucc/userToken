@@ -1,5 +1,6 @@
 package br.pratiqs.user.entity;
 
+import br.pratiqs.todolist.entity.toDoEt;
 import jakarta.persistence.*;
 
 @Entity
@@ -15,6 +16,8 @@ public class userEt {
     private String password;
 
     private String email;
+    @OneToOne(mappedBy = "createdBy")
+    private toDoEt toDoEt;
 
     public Long getId() {
         return id;

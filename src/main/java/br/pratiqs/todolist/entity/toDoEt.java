@@ -1,5 +1,6 @@
 package br.pratiqs.todolist.entity;
 
+import br.pratiqs.user.entity.userEt;
 import jakarta.persistence.*;
 import org.springframework.web.service.annotation.GetExchange;
 
@@ -17,6 +18,9 @@ public class toDoEt {
     private boolean realizado;
 
     private int prioridade;
+
+    @OneToOne()
+    private userEt createdBy;
 
     public Long getId() {
         return id;
@@ -57,4 +61,5 @@ public class toDoEt {
     public void setPrioridade(int prioridade) {
         this.prioridade = prioridade;
     }
+
 }

@@ -9,6 +9,7 @@ import java.util.List;
 
 @Service
 public class toDoService {
+
     private toDoRepository toDoRepository;
 
     public toDoService(br.pratiqs.todolist.repository.toDoRepository toDoRepository) {
@@ -17,6 +18,7 @@ public class toDoService {
 
     public List<toDoEt> create(toDoEt todo){
         toDoRepository.save(todo);
+
         return list();
     }
 
