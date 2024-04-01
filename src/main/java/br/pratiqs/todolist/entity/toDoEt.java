@@ -8,6 +8,16 @@ import org.springframework.web.service.annotation.GetExchange;
 @Table(name = "todos")
 public class toDoEt {
 
+    public toDoEt() {
+    }
+
+    public toDoEt(String nome, String discricao, boolean realizado, int prioridade) {
+        this.nome = nome;
+        this.discricao = discricao;
+        this.realizado = realizado;
+        this.prioridade = prioridade;
+    }
+
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
@@ -62,4 +72,11 @@ public class toDoEt {
         this.prioridade = prioridade;
     }
 
+    public userEt getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(userEt createdBy) {
+        this.createdBy = createdBy;
+    }
 }

@@ -25,7 +25,7 @@ public class toDoController {
        return toDoService.list();
    }
 
-   @PutMapping
+   @PutMapping()
     List<toDoEt> update(@RequestBody toDoEt todo){
        return toDoService.update(todo);
    }
