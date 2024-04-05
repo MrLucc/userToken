@@ -1,4 +1,7 @@
 package br.pratiqs.user.repository;
 
-public interface userRepository {
+import br.pratiqs.user.entity.userEt;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface userRepository extends JpaRepository<userEt, Long> {
 }
