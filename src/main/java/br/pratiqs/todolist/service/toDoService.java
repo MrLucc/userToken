@@ -10,9 +10,9 @@ import java.util.List;
 @Service
 public class toDoService {
 
-    private toDoRepository toDoRepository;
+    private final toDoRepository toDoRepository;
 
-    public toDoService(br.pratiqs.todolist.repository.toDoRepository toDoRepository) {
+    public toDoService(toDoRepository toDoRepository) {
         this.toDoRepository = toDoRepository;
     }
 
