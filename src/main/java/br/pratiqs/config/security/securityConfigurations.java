@@ -10,5 +10,6 @@ import org.springframework.security.web.SecurityFilterChain;
 public class securityConfigurations {
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) {
         return null;
+
     }
 }
