@@ -5,10 +5,12 @@ import br.pratiqs.todolist.repository.toDoRepository;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import javax.print.PrintException;
 import java.util.List;
 
 @Service
 public class toDoService {
+    private toDoEt toDoEt;
 
     private final toDoRepository toDoRepository;
 
@@ -16,10 +18,8 @@ public class toDoService {
         this.toDoRepository = toDoRepository;
     }
 
-    public List<toDoEt> create(toDoEt todo){
-        toDoRepository.save(todo);
-
-        return list();
+    public toDoEt create(toDoEt todo){
+          return  toDoRepository.save(todo);
     }
 
     public List<toDoEt> list(){

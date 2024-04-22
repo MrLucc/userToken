@@ -12,17 +12,6 @@ public class toDoEt extends abstractClassET {
     public toDoEt() {
     }
 
-//    public toDoEt(String nome, String discricao, boolean realizado, int prioridade) {
-//        this.nome = nome;
-//        this.discricao = discricao;
-//        this.realizado = realizado;
-//        this.prioridade = prioridade;
-//    }
-
-//    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-//   private Long id;
-//
-//    private String nome;
 
     private String discricao;
 
@@ -33,21 +22,6 @@ public class toDoEt extends abstractClassET {
     @OneToOne()
     private userEt createdBy;
 
-//    public Long getId() {
-//        return id;
-//    }
-//
-//    public void setId(Long id) {
-//        this.id = id;
-//    }
-//
-//    public String getNome() {
-//        return nome;
-//    }
-//
-//    public void setNome(String nome) {
-//        this.nome = nome;
-//    }
 
     public String getDiscricao() {
         return discricao;

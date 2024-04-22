@@ -13,7 +13,7 @@ class TodolistApplicationTests {
 
 	@Test
 	void testCreateTodoSucess() {
-        var toDoEt = new toDoEt("Test todo 1", "Test descrição 1", true, 1);
+        var toDoEt = new toDoEt();
 
 		webTestClient.post().uri("/todos")
 				.bodyValue(toDoEt)

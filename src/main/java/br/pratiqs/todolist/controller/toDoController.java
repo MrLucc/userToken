@@ -16,7 +16,7 @@ public class toDoController {
    }
 
    @PostMapping
-   List<toDoEt> create(@RequestBody toDoEt todo){
+   toDoEt create(@RequestBody toDoEt todo){
        return toDoService.create(todo);
    }
 

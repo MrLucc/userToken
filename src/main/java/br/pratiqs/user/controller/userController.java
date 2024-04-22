@@ -3,21 +3,16 @@ package br.pratiqs.user.controller;
 import br.pratiqs.user.entity.userEt;
 import br.pratiqs.user.service.userService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.List;
 
 @RestController
 @RequestMapping("/user")
 public class userController {
-
-
-    private  userEt userEt;
 
     private final userService pUserService;
 
@@ -30,4 +25,9 @@ public class userController {
 
         return pUserService.create(user);
     }
+
+   @GetMapping
+   List<userEt> list(){
+        return pUserService.list();
+   }
 }
