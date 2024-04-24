@@ -34,6 +34,9 @@ public class userEt extends abstractClassET implements UserDetails {
         this.roles = roles;
     }
 
+    public userEt() {
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         if(this.roles == userRoles.ADMIN) return List.of(new SimpleGrantedAuthority("ROLE_ADMIN"), new SimpleGrantedAuthority("ROLE_USER"));
@@ -46,7 +49,7 @@ public class userEt extends abstractClassET implements UserDetails {
 
     @Override
     public String getUsername() {
-        return getNome();
+        return getEmail();
     }
 
     @Override
