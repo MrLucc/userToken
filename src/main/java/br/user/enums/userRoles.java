@@ -2,7 +2,7 @@ package br.user.enums;
 
 public enum userRoles {
 
-    ADMIN("admin"),
+    ADMIN("1"),
     USER("user");
 
    private String roles;

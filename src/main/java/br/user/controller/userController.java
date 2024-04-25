@@ -1,29 +1,47 @@
 package br.user.controller;
 
+import br.core.dto.authenticationDTO;
+import br.core.dto.registerDTO;
+import br.user.repository.userRepository;
 import br.user.service.userService;
 import br.user.entity.userEt;
+import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/auth/user")
 public class userController {
+    @Autowired
+    private AuthenticationManager authenticationManager;
 
-    private final userService pUserService;
+    @Autowired
+    private br.user.repository.userRepository userRepository;
 
-    public userController(userService pUserService){
-        this.pUserService = pUserService;
+    @PostMapping("/login")
+    public ResponseEntity login(@RequestBody @Valid authenticationDTO data) {
+        var userNamePassword = new UsernamePasswordAuthenticationToken(data.email(), data.password());
+        var auth = this.authenticationManager.authenticate(userNamePassword);
+
+        return ResponseEntity.ok().build();
     }
 
-    @PostMapping
-    userEt create(@RequestBody userEt user){
+    @PostMapping("/register")
+    public ResponseEntity register(@RequestBody @Valid registerDTO data) {
+        if (this.userRepository.findByEmail(data.email()) != null) {
+            return ResponseEntity.badRequest().build();
+        }
+        String encryptedPassword = new BCryptPasswordEncoder().encode(data.password());
+        userEt newUser = new userEt(data.email(), encryptedPassword, data.Role());
 
-        return pUserService.create(user);
+        this.userRepository.save(newUser);
+
+        return ResponseEntity.ok().build();
     }
-
-   @GetMapping
-   List<userEt> list(){
-        return pUserService.list();
-   }
 }
