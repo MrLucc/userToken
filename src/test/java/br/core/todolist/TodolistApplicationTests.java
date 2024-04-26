@@ -1,6 +1,6 @@
-package br.pratiqs.todolist;
+package br.core.todolist;
 
-import br.pratiqs.todolist.entity.toDoEt;
+import br.todolist.entity.ToDoEt;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -13,7 +13,7 @@ class TodolistApplicationTests {
 
 	@Test
 	void testCreateTodoSucess() {
-        var toDoEt = new toDoEt("Test todo 1", "Test descrição 1", true, 1);
+        var toDoEt = new ToDoEt();
 
 		webTestClient.post().uri("/todos")
 				.bodyValue(toDoEt)
