@@ -10,8 +10,8 @@ import java.util.Date;
 
 
 @MappedSuperclass
-@EntityListeners(abstractClassET.class)
-public abstract class abstractClassET {
+@EntityListeners(AbstractClassET.class)
+public abstract class AbstractClassET {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,7 +23,7 @@ public abstract class abstractClassET {
     private Instant createdDate = Instant.now();
 
     @LastModifiedDate
-    private Date lastModifiedDate;
+    private Instant lastModifiedDate = Instant.now();
 
     public String getNome() {
         return nome;
@@ -39,5 +39,13 @@ public abstract class abstractClassET {
 
     public void setCreatedDate(Instant createdDate) {
         this.createdDate = createdDate;
+    }
+
+    public Instant getLastModifiedDate() {
+        return lastModifiedDate;
+    }
+
+    public void setLastModifiedDate(Instant lastModifiedDate) {
+        this.lastModifiedDate = lastModifiedDate;
     }
 }

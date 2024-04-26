@@ -1,14 +1,14 @@
 package br.todolist.entity;
 
-import br.core.abstracts.abstractClassET;
-import br.user.entity.userEt;
+import br.core.abstracts.AbstractClassET;
+import br.user.entity.UserEt;
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "todos")
-public class toDoEt extends abstractClassET {
+public class ToDoEt extends AbstractClassET {
 
-    public toDoEt() {
+    public ToDoEt() {
     }
 
 
@@ -19,7 +19,7 @@ public class toDoEt extends abstractClassET {
     private int prioridade;
 
     @OneToOne()
-    private userEt createdBy;
+    private UserEt createdBy;
 
 
     public String getDiscricao() {
@@ -46,11 +46,11 @@ public class toDoEt extends abstractClassET {
         this.prioridade = prioridade;
     }
 
-    public userEt getCreatedBy() {
+    public UserEt getCreatedBy() {
         return createdBy;
     }
 
-    public void setCreatedBy(userEt createdBy) {
+    public void setCreatedBy(UserEt createdBy) {
         this.createdBy = createdBy;
     }
 }

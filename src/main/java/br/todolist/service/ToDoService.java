@@ -1,37 +1,37 @@
 package br.todolist.service;
 
-import br.todolist.repository.toDoRepository;
-import br.todolist.entity.toDoEt;
+import br.todolist.repository.ToDoRepository;
+import br.todolist.entity.ToDoEt;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class toDoService {
-    private toDoEt toDoEt;
+public class ToDoService {
+    private ToDoEt toDoEt;
 
-    private final br.todolist.repository.toDoRepository toDoRepository;
+    private final ToDoRepository toDoRepository;
 
-    public toDoService(toDoRepository toDoRepository) {
+    public ToDoService(ToDoRepository toDoRepository) {
         this.toDoRepository = toDoRepository;
     }
 
-    public toDoEt create(toDoEt todo){
+    public ToDoEt create(ToDoEt todo){
           return  toDoRepository.save(todo);
     }
 
-    public List<toDoEt> list(){
+    public List<ToDoEt> list(){
         Sort sort = Sort.by("Prioridade").descending().and(Sort.by("nome").ascending());
         return toDoRepository.findAll(sort);
     }
 
-    public List<toDoEt> update(toDoEt todo){
+    public List<ToDoEt> update(ToDoEt todo){
         toDoRepository.save(todo);
         return list();
     }
 
-    public List<toDoEt> delete(Long id){
+    public List<ToDoEt> delete(Long id){
         toDoRepository.deleteById(id);
         return list();
     }

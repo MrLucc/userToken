@@ -1,7 +1,7 @@
 package br.user.service;
 
 import br.user.repository.userRepository;
-import br.user.entity.userEt;
+import br.user.entity.UserEt;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,11 +14,11 @@ public class userService {
         this.userRepository = userRepository;
     }
 
-    public userEt create(userEt user){
+    public UserEt create(UserEt user){
         return userRepository.save(user);
     }
 
-    public List<userEt> list(){
+    public List<UserEt> list(){
         return userRepository.findAll();
     }
 }

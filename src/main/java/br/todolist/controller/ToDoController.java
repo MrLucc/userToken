@@ -1,37 +1,37 @@
 package br.todolist.controller;
 
-import br.todolist.service.toDoService;
-import br.todolist.entity.toDoEt;
+import br.todolist.service.ToDoService;
+import br.todolist.entity.ToDoEt;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/todos")
-public class toDoController {
-    private br.todolist.service.toDoService toDoService;
+public class ToDoController {
+    private ToDoService toDoService;
 
-   public toDoController(toDoService toDoService){
+   public ToDoController(ToDoService toDoService){
        this.toDoService = toDoService;
    }
 
    @PostMapping
-   toDoEt create(@RequestBody toDoEt todo){
+   ToDoEt create(@RequestBody ToDoEt todo){
        return toDoService.create(todo);
    }
 
    @GetMapping
-    List<toDoEt> list(){
+    List<ToDoEt> list(){
        return toDoService.list();
    }
 
    @PutMapping()
-    List<toDoEt> update(@RequestBody toDoEt todo){
+    List<ToDoEt> update(@RequestBody ToDoEt todo){
        return toDoService.update(todo);
    }
 
    @DeleteMapping("{id}")
-    List<toDoEt> delete(@PathVariable("id")Long id){
+    List<ToDoEt> delete(@PathVariable("id")Long id){
        return toDoService.delete(id);
    }
 }

@@ -1,17 +1,21 @@
 package br.user.enums;
 
-public enum userRoles {
+public enum UserRoles {
 
-    ADMIN("1"),
+    ADMIN("admin"),
     USER("user");
 
    private String roles;
 
-    userRoles(String role){
+    UserRoles(String role){
         this.roles = role;
     }
 
     public String getRoles() {
         return roles;
+    }
+
+    public void setRoles(String roles) {
+        this.roles = roles;
     }
 }

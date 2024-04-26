@@ -1,7 +1,7 @@
 package br.user.entity;
 
-import br.core.abstracts.abstractClassET;
-import br.user.enums.userRoles;
+import br.core.abstracts.AbstractClassET;
+import br.user.enums.UserRoles;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
@@ -15,7 +15,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "users")
-public class userEt extends abstractClassET implements UserDetails {
+public class UserEt extends AbstractClassET implements UserDetails {
 
     @NotEmpty
     @NotBlank
@@ -26,20 +26,22 @@ public class userEt extends abstractClassET implements UserDetails {
     @NotBlank
     private String email;
 
-    private userRoles roles;
+    @Enumerated(EnumType.STRING)
+    @Column(columnDefinition = "varchar(10)")
+    private UserRoles roles;
 
-    public userEt(String email, String password, userRoles roles){
+    public UserEt(String email, String password, UserRoles roles){
         this.email = email;
         this.password = password;
         this.roles = roles;
     }
 
-    public userEt() {
+    public UserEt() {
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        if(this.roles == userRoles.ADMIN) return List.of(new SimpleGrantedAuthority("ROLE_ADMIN"), new SimpleGrantedAuthority("ROLE_USER"));
+        if(this.roles == UserRoles.ADMIN) return List.of(new SimpleGrantedAuthority("ROLE_ADMIN"), new SimpleGrantedAuthority("ROLE_USER"));
         else return List.of(new SimpleGrantedAuthority("ROLE_USER"));
     }
 
