@@ -30,10 +30,11 @@ public class UserEt extends AbstractClassET implements UserDetails {
     @Column(columnDefinition = "varchar(10)")
     private UserRoles roles;
 
-    public UserEt(String email, String password, UserRoles roles){
+    public UserEt(String email, String password, UserRoles roles, String nome){
         this.email = email;
         this.password = password;
         this.roles = roles;
+        setNome(nome);
     }
 
     public UserEt() {
