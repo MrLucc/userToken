@@ -1,6 +1,6 @@
 package br.core.services;
 
-import br.user.repository.userRepository;
+import br.core.adapter.driven.userRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

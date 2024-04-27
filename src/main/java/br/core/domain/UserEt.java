@@ -1,6 +1,5 @@
-package br.user.entity;
+package br.core.domain;
 
-import br.core.abstracts.AbstractClassET;
 import br.user.enums.UserRoles;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -30,10 +29,11 @@ public class UserEt extends AbstractClassET implements UserDetails {
     @Column(columnDefinition = "varchar(10)")
     private UserRoles roles;
 
-    public UserEt(String email, String password, UserRoles roles){
+    public UserEt(String email, String password, UserRoles roles, String nome){
         this.email = email;
         this.password = password;
         this.roles = roles;
+        setNome(nome);
     }
 
     public UserEt() {

@@ -1,6 +1,6 @@
 package br.core.config.security;
 
-import br.user.repository.userRepository;
+import br.core.adapter.driven.userRepository;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

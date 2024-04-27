@@ -1,7 +1,7 @@
 package br.todolist.entity;
 
-import br.core.abstracts.AbstractClassET;
-import br.user.entity.UserEt;
+import br.core.domain.AbstractClassET;
+import br.core.domain.UserEt;
 import jakarta.persistence.*;
 
 @Entity
@@ -10,8 +10,6 @@ public class ToDoEt extends AbstractClassET {
 
     public ToDoEt() {
     }
-
-
     private String discricao;
 
     private boolean realizado;
