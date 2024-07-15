@@ -1,4 +1,4 @@
-package br.core.services;
+package br.core.port;
 
 import br.core.adapter.driven.userRepository;
 import org.springframework.beans.factory.annotation.Autowired;

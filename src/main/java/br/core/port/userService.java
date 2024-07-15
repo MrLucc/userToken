@@ -1,4 +1,4 @@
-package br.user.service;
+package br.core.port;
 
 import br.core.adapter.driven.userRepository;
 import br.core.domain.UserEt;

@@ -1,9 +1,9 @@
 package br.core.adapter.driver;
 
-import br.core.config.security.TokenService;
-import br.core.dto.AuthenticationDTO;
-import br.core.dto.LoginResponseDTO;
-import br.core.dto.RegisterResponseDTO;
+import br.core.adapter.security.TokenService;
+import br.core.adapter.dto.AuthenticationDTO;
+import br.core.adapter.dto.LoginResponseDTO;
+import br.core.adapter.dto.RegisterResponseDTO;
 import br.core.adapter.driven.userRepository;
 import br.core.domain.UserEt;
 import jakarta.validation.Valid;

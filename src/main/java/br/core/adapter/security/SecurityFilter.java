@@ -1,4 +1,4 @@
-package br.core.config.security;
+package br.core.adapter.security;
 
 import br.core.adapter.driven.userRepository;
 import jakarta.servlet.FilterChain;

@@ -1,4 +1,4 @@
-package br.core.config.security;
+package br.core.adapter.security;
 
 import br.core.domain.UserEt;
 import com.auth0.jwt.JWT;

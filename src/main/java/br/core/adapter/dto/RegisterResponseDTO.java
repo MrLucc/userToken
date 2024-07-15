@@ -1,6 +1,6 @@
-package br.core.dto;
+package br.core.adapter.dto;
 
-import br.user.enums.UserRoles;
+import br.core.domain.UserRoles;
 
 public record RegisterResponseDTO(String email, String password, UserRoles roles, String nome) {
 }

@@ -1,6 +1,5 @@
 package br.core.domain;
 
-import br.user.enums.UserRoles;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
@@ -35,6 +34,7 @@ public class UserEt extends AbstractClassET implements UserDetails {
         this.roles = roles;
         setNome(nome);
     }
+
 
     public UserEt() {
     }
