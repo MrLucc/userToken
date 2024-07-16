@@ -1,4 +1,4 @@
-package br.core.dto;
+package br.core.adapter.dto;
 
 public record LoginResponseDTO(String token) {
 }

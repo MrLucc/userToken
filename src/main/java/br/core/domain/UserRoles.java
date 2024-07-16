@@ -1,4 +1,4 @@
-package br.user.enums;
+package br.core.domain;
 
 public enum UserRoles {
 

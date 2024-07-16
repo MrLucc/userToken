@@ -1,6 +1,6 @@
-package br.core.config.security;
+package br.core.adapter.security;
 
-import br.user.entity.UserEt;
+import br.core.domain.UserEt;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTCreationException;

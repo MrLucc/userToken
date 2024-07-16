@@ -1,14 +1,14 @@
-package br.user.service;
+package br.core.port;
 
-import br.user.repository.userRepository;
-import br.user.entity.UserEt;
+import br.core.adapter.driven.userRepository;
+import br.core.domain.UserEt;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class userService {
-    private final br.user.repository.userRepository userRepository;
+    private final br.core.adapter.driven.userRepository userRepository;
 
     public userService(userRepository userRepository){
         this.userRepository = userRepository;
@@ -21,4 +21,9 @@ public class userService {
     public List<UserEt> list(){
         return userRepository.findAll();
     }
+
+//    public ResponseEntity<UserEt> update(UserEt user){
+//
+//    }
+
 }
