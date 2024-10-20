@@ -1,13 +1,13 @@
 package br.core.domain;
 
-public enum UserRoles {
+public enum UserRolesEnums {
 
     ADMIN("admin"),
     USER("user");
 
    private String roles;
 
-    UserRoles(String role){
+    UserRolesEnums(String role){
         this.roles = role;
     }
 
