@@ -26,9 +26,9 @@ public class UserEt extends AbstractClassET implements UserDetails {
 
     @Enumerated(EnumType.STRING)
     @Column(columnDefinition = "varchar(10)")
-    private UserRoles roles;
+    private UserRolesEnums roles;
 
-    public UserEt(String email, String password, UserRoles roles, String nome){
+    public UserEt(String email, String password, UserRolesEnums roles, String nome){
         this.email = email;
         this.password = password;
         this.roles = roles;
@@ -41,7 +41,7 @@ public class UserEt extends AbstractClassET implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        if(this.roles == UserRoles.ADMIN) return List.of(new SimpleGrantedAuthority("ROLE_ADMIN"), new SimpleGrantedAuthority("ROLE_USER"));
+        if(this.roles == UserRolesEnums.ADMIN) return List.of(new SimpleGrantedAuthority("ROLE_ADMIN"), new SimpleGrantedAuthority("ROLE_USER"));
         else return List.of(new SimpleGrantedAuthority("ROLE_USER"));
     }
 
